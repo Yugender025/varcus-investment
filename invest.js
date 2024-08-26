@@ -1,45 +1,38 @@
-const carousel = document.querySelector(".varcus-products");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-
 let currentIndex = 0;
-const productsPerPage = 3;
-const totalProducts = document.querySelectorAll(".product").length;
-const totalPages = Math.ceil(totalProducts / productsPerPage);
+const itemsToShow = 3;
+const items = document.querySelectorAll(".product");
+const totalItems = items.length;
+const carouselTrack = document.querySelector(".varcus-products");
+const maxIndex =
+  Math.ceil(totalItems / itemsToShow) * itemsToShow - itemsToShow;
 
-prevBtn.addEventListener("click", () => {
+function updateCarousel() {
+  const offset = -currentIndex * (100 / itemsToShow);
+  carouselTrack.style.transform = `translateX(${offset}%)`;
+}
+
+function nextSlide() {
+  if (currentIndex < maxIndex) {
+    currentIndex += itemsToShow;
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+    updateCarousel();
+  }
+}
+
+function prevSlide() {
   if (currentIndex > 0) {
-    currentIndex--;
+    currentIndex -= itemsToShow;
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
     updateCarousel();
   }
-});
-
-nextBtn.addEventListener("click", () => {
-  if (currentIndex < totalPages - 1) {
-    currentIndex++;
-    updateCarousel();
-  }
-});
-
-function updateCarousel() {
-  const offset = currentIndex * (100 / productsPerPage);
-  carousel.style.transform = `translateX(-${offset}%)`;
 }
 
-// Disable buttons if at start or end of carousel
-function updateButtons() {
-  prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex === totalPages - 1;
-}
-
-function updateCarousel() {
-  const offset = currentIndex * (100 / productsPerPage);
-  carousel.style.transform = `translateX(-${offset}%)`;
-  updateButtons();
-}
-
-// Initial call to set button states
-updateButtons();
+// Initial update to position carousel
+updateCarousel();
 
 //form integration
 document
