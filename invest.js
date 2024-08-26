@@ -1,38 +1,48 @@
 let currentIndex = 0;
-const itemsToShow = 3;
-const items = document.querySelectorAll(".product");
-const totalItems = items.length;
-const carouselTrack = document.querySelector(".varcus-products");
-const maxIndex =
-  Math.ceil(totalItems / itemsToShow) * itemsToShow - itemsToShow;
+const totalItems = 6;
+let itemsToShow = 3; // Default value for desktop
+let maxIndex = Math.ceil(totalItems / itemsToShow) - 1;
+
+function updateItemsToShow() {
+  if (window.innerWidth <= 480) {
+    itemsToShow = 1; // Show 1 item at a time on small screens
+  } else if (window.innerWidth <= 768) {
+    itemsToShow = 2; // Show 2 items at a time on medium screens
+  } else {
+    itemsToShow = 3; // Show 3 items at a time on larger screens
+  }
+  maxIndex = Math.ceil(totalItems / itemsToShow) - 1;
+  updateCarousel(); // Recalculate and update the carousel
+}
 
 function updateCarousel() {
   const offset = -currentIndex * (100 / itemsToShow);
-  carouselTrack.style.transform = `translateX(${offset}%)`;
+  document.querySelector(
+    ".varcus-products"
+  ).style.transform = `translateX(${offset}%)`;
 }
 
 function nextSlide() {
   if (currentIndex < maxIndex) {
-    currentIndex += itemsToShow;
-    if (currentIndex > maxIndex) {
-      currentIndex = maxIndex;
-    }
+    currentIndex++;
     updateCarousel();
   }
 }
 
 function prevSlide() {
   if (currentIndex > 0) {
-    currentIndex -= itemsToShow;
-    if (currentIndex < 0) {
-      currentIndex = 0;
-    }
+    currentIndex--;
     updateCarousel();
   }
 }
 
-// Initial update to position carousel
-updateCarousel();
+// Attach event listeners
+document.getElementById("nextBtn").addEventListener("click", nextSlide);
+document.getElementById("prevBtn").addEventListener("click", prevSlide);
+window.addEventListener("resize", updateItemsToShow);
+
+// Initial update
+updateItemsToShow();
 
 //form integration
 document

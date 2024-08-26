@@ -113,7 +113,7 @@ html {
 }
 
 *{
-    font-family: "neurial grotesk";
+    font-family: "Neurial Grotesk-Regular", Helvetica, sans-serif;
     list-style: none;
     text-decoration: none;
     margin: 0;
@@ -122,7 +122,7 @@ html {
 }
 
 body{
-    font-family: "neurial grotesk";
+    font-family:"Neurial Grotesk-Regular", Helvetica, sans-serif;
     background-color: var(--bg-color);
 }
 h1{
@@ -460,7 +460,7 @@ nav {
 }
 .section-heading{
    padding-top: 2rem;
-   padding-bottom: 4rem;
+  
 }
 .section-heading h2{
     font-size: var(--h2-font-size);
@@ -527,7 +527,16 @@ nav {
 }
 .section-4 {
     margin-left: 60px;
-    /* margin-right: 60px; */
+    margin-right:60px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+}
+.view-more{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .carousel-container {
@@ -538,14 +547,14 @@ nav {
 .varcus-products {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    gap: 2rem;
+    gap: 1rem; /* Reduced gap for better alignment */
 }
 
 .varcus-products .product {
     background-color: var(--main-color);
     border-radius: 12px;
-    flex: 1 0 30%; /* Show 3 products at a time */
-    max-width: 30%;
+    flex: 0 0 100%; /* For mobile view */
+    max-width: 100%; /* For mobile view */
     box-sizing: border-box;
 }
 
@@ -554,6 +563,14 @@ nav {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 255px;
+}
+
+/* For larger screens (show 3 products at a time) */
+@media (min-width: 600px) {
+    .varcus-products .product {
+        flex: 0 0 calc((100% / 3) - 1rem);
+        max-width: calc((100% / 3) - 1rem);
+    }
 }
 
 /* Navigation button styles */
@@ -577,23 +594,28 @@ nav {
 .carousel-navigation button:hover {
     background-color: #444;
 }
-.product-info{
-    margin:16px 0 16.5px 16px
+
+.product-info {
+    margin: 16px 0 16.5px 16px;
 }
-.product-heading{
+
+.product-heading {
     font-size: var(--2xl-font-size);
     font-weight: var(--2xl-font-weight);
     line-height: var(--2xl-line-height);
     letter-spacing: var(--2xl-letter-spacing);
 }
-.product-price{
+
+.product-price {
     margin-top: 1rem;
     padding-bottom: 5px;
     font-size: var(--BASE-font-size);
 }
-.product-info .main-btns{
+
+.product-info .main-btns {
     margin-top: 16px;
 }
+
 .section-5{
     margin-left: 60px;
     margin-right: 60px;
@@ -615,9 +637,10 @@ nav {
 }
 .highlights-container{
     margin-top: 4rem;
-    background-color: azure;
+    background-color: var(--bgcolor-1);
     width: 100%;
     height: auto;
+    
 }
 /*    
 .container-highlights{
@@ -634,12 +657,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:4rem;
+    gap:2rem;
     padding-top: 6rem;
     padding-bottom: 8rem;
 }
 .value-number{
     font-size: var(--h3-font-size);
+    font-weight: var(--h3-font-weight);
 }  
   @media (max-width: 599px) {
     .container-highlights {
@@ -681,6 +705,7 @@ nav {
     font-size: var(--h2-font-size);
     font-style: var(--h2-font-style);
     font-weight: var(--h2-font-weight);
+    color: var(--main-color);
  
 }
 .section-7{
@@ -696,7 +721,7 @@ nav {
     display: flex;
     align-items:center;
     justify-content: center;
-    gap: 100px;
+    gap: 20px;
 }
 .team-heading {
     width: 50%;
@@ -787,7 +812,6 @@ nav {
     align-items: center;
     position: relative;
     align-self: stretch;
-    width: 100%;
     flex: 0 0 auto;
     }
     .section-9 .p {
@@ -827,60 +851,7 @@ nav {
     font-style: var(--body-bold-font-style);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   
 
     footer{
         margin-top: 4rem;
@@ -939,7 +910,7 @@ nav {
     }
     .footer-container{
         display: flex;
-        padding: 60px 10px 60px 10px;
+        padding: 60px 30px 60px 30px;
         gap: 10rem;
     }
     .social {
@@ -985,7 +956,7 @@ nav {
 
 .form-details {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 3rem;
     margin-top: 3rem;
@@ -993,7 +964,6 @@ nav {
 }
 
 .form-container {
-    width: 100%;
     max-width: 500px;
     background-color: #1c1c1c; /* Dark background color */
     padding: 30px;
@@ -1119,13 +1089,8 @@ button:hover {
         align-items: stretch;
     }
 
-    .contact-details {
-        width: 100%;
-    }
 
-    .form-container {
-        max-width: 100%;
-    }
+
 }
 .contact-links span{
     text-decoration: underline;
@@ -1176,7 +1141,6 @@ button:hover {
         letter-spacing: var(--h3-letter-spacing);
     }
     .section-5{
-        width: 100%;
         margin-left: 24px;
         margin-right: 24px;
     }
@@ -1188,7 +1152,7 @@ button:hover {
         margin-left: 24px;
         margin-right: 24px;
         flex-direction: column-reverse;
-        width: 100%;
+        
     }
     .section-7 .team-headings{
         font-size: var(--h3-font-size);
@@ -1202,11 +1166,9 @@ button:hover {
     .input-row{
         flex-direction: column;
     }
-    .team-heading {
-        width: 100%;
-    }
+    
     .section-8{
-        width: 100%;
+
         margin-left: 24px;
         margin-right: 24px;
     }
@@ -1239,7 +1201,7 @@ button:hover {
     }
 
     .plans-cards {
-        width: 100%;
+    
         margin-bottom: 2rem;
     }
 
@@ -1273,8 +1235,12 @@ button:hover {
 
 @media (max-width: 480px) {
     .plans-cards {
+        width:100%;
         padding: 30px 15px;
     }
+    .team-heading {
+        width: 90%;
+}
 
     .section-heading h2 {
         font-size: 1.75rem;
