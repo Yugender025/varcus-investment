@@ -141,3 +141,23 @@ document.addEventListener("DOMContentLoaded", function () {
     contactSection.scrollIntoView({ behavior: "smooth" });
   });
 });
+
+//responive menu
+const menuItems = document.querySelector(".menu-items");
+const toggleButton = document.querySelector(".menu-toggle");
+const closeButton = document.querySelector(".close-menu");
+
+toggleButton.addEventListener("click", function () {
+  menuItems.classList.add("open");
+  toggleButton.style.display = "none"; // Hide toggle button when menu opens
+  closeButton.style.display = "block"; // Show close button when menu opens
+});
+
+closeButton.addEventListener("click", function () {
+  menuItems.classList.remove("open");
+  toggleButton.style.display = "block"; // Show toggle button when menu closes
+  closeButton.style.display = "none"; // Hide close button when menu closes
+});
+
+// Initial state: Hide close button on page load
+closeButton.style.display = "none";

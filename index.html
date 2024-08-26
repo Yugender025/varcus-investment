@@ -10,10 +10,13 @@
 </head>
 <body>
     <header>
-        <nav>
+        <!-- <nav>
             <div class="hero">
-                <img src="images/VARCAS.png"  width="50px" alt="varcus">
+                <img src="images/VARCAS.png" width="50px" alt="varcus">
             </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                &#9776;
+            </button>
             <div class="menu-items">
                 <ul class="menu-list">
                     <li><a href="#">Home</a></li>
@@ -23,7 +26,29 @@
                     <li><a id="contact-link" href="#">Contact us</a></li>
                 </ul>
             </div>
+        </nav> -->
+        <nav>
+            <div class="hero">
+                <img src="images/VARCAS.png" width="50px" alt="varcus">
+            </div>
+            <button class="menu-toggle" aria-label="Open Menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="menu-items">
+                <button class="close-menu" aria-label="Close Menu">
+                    <i class="fa fa-times"></i>
+                </button>
+                <ul class="menu-list">
+                    <li><a href="#">Home</a></li>
+                    <li><a id="about-link" href="#">About us</a></li>
+                    <li><a id="buy-ev-link" href="#">Buy EV</a></li>
+                    <li><a id="invest-link" href="#">Invest</a></li>
+                    <li><a id="contact-link" href="#">Contact us</a></li>
+                </ul>
+            </div>
         </nav>
+        
+        
     </header>    
     <div id="investing" class="section-1">
         <div class="main-container">
@@ -91,7 +116,7 @@
                         <span class="captions">Invest in varcus</span>
                     </div>
                     <div class="content">
-                        <span class="contents">Start by investing up to ₹20 Lakhs in our innovative electric scooter brand and secure your stake in the future of mobility.</span>
+                        <span class="contents">Invest up to ₹20 Lakhs in a Varcus retail showroom and secure your stake in the future of mobility with this hassle-free investment opportunity.</span>
                     </div>
                     <div class="learn-more">
                         <span class="Learn">Learn more</span> <i class="fa-light fa-chevron-right"></i>
@@ -107,7 +132,7 @@
                         <span class="captions">We manage</span>
                     </div>
                     <div class="content">
-                        <span class="contents">Start by investing up to ₹20 Lakhs in our innovative electric scooter brand and secure your stake in the future of mobility.</span>
+                        <span class="contents">Our experienced team takes charge, expertly managing your investment to ensure the growth, expansion, and long-term success of Varcus in the electric mobility industry.</span>
                     </div>
                     <div class="learn-more">
                         <span class="Learn">Learn more</span> <i class="fa-light fa-chevron-right"></i>
@@ -123,7 +148,7 @@
                         <span class="captions">Get assure Returns</span>
                     </div>
                     <div class="content">
-                        <span class="contents">Start by investing up to ₹20 Lakhs in our innovative electric scooter brand and secure your stake in the future of mobility.</span>
+                        <span class="contents">Earn up to <span style="color: red; font-size: 18px; font-weight: bold;">₹30,000</span>monthly for the next 10 years while enjoying steady, reliable returns. Your investment yields consistent, long-term financial rewards.</span>
                     </div>
                     <div class="learn-more">
                         <span class="Learn">Learn more</span> <i class="fa-light fa-chevron-right"></i>
@@ -135,6 +160,10 @@
     <div id="buy-ev" class="section-4">
         <div class="section-heading">
             <h2 style="color: #000000;">Pick your Varcus</h2>
+        </div>
+        <div class="carousel-navigation">
+            <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
+            <button style="background-color: red;" id="nextBtn" onclick="nextSlide()">&#10095;</button>
         </div>
         <div class="carousel-container">
             <div class="varcus-products">
@@ -153,7 +182,20 @@
                 </div>
                 <div class="product">
                     <div class="product-img">
-                        <img src="images/aman-1.png" width="400px" alt="varcus aman">
+                        <img src="images/product-2.png" width="400px" alt="varcus aman">
+                    </div>
+                    <div style="display: grid;" class="product-info">
+                    <span class="product-heading">Varcus Falcon
+                    </span>
+                    <span class="product-price">Starting at ₹ 1 15 599
+                    </span>
+                    <span class="product-emi">Or EMI ₹ 2 475/month</span>
+                    <button class="main-btns" type="btn">Know more</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-img">
+                        <img src="images/product-3.png" width="400px" alt="varcus aman">
                     </div>
                     <div style="display: grid;" class="product-info">
                     <span class="product-heading">Varcus Falcon
@@ -204,64 +246,14 @@
                     </div>
                 </div>
                 <div class="product">
-                    <div class="product-img">
-                        <img src="images/aman-1.png" width="400px" alt="varcus aman">
-                    </div>
-                    <div style="display: grid;" class="product-info">
-                    <span class="product-heading">Varcus Falcon
-                    </span>
-                    <span class="product-price">Starting at ₹ 1 15 599
-                    </span>
-                    <span class="product-emi">Or EMI ₹ 2 475/month</span>
-                    <button class="main-btns" type="btn">Know more</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-img">
-                        <img src="images/aman-1.png" width="400px" alt="varcus aman">
-                    </div>
-                    <div style="display: grid;" class="product-info">
-                    <span class="product-heading">Varcus Falcon
-                    </span>
-                    <span class="product-price">Starting at ₹ 1 15 599
-                    </span>
-                    <span class="product-emi">Or EMI ₹ 2 475/month</span>
-                    <button class="main-btns" type="btn">Know more</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-img">
-                        <img src="images/aman-1.png" width="400px" alt="varcus aman">
-                    </div>
-                    <div style="display: grid;" class="product-info">
-                    <span class="product-heading">Varcus Falcon
-                    </span>
-                    <span class="product-price">Starting at ₹ 1 15 599
-                    </span>
-                    <span class="product-emi">Or EMI ₹ 2 475/month</span>
-                    <button class="main-btns" type="btn">Know more</button>
-                    </div>
-                </div>
-                <div class="product">
-                    <div class="product-img">
-                        <img src="images/aman-1.png" width="400px" alt="varcus aman">
-                    </div>
-                    <div style="display: grid;" class="product-info">
-                    <span class="product-heading">Varcus Falcon
-                    </span>
-                    <span class="product-price">Starting at ₹ 1 15 599
-                    </span>
-                    <span class="product-emi">Or EMI ₹ 2 475/month</span>
-                    <button class="main-btns" type="btn">Know more</button>
+                    <div class="view-more">
+                        <a href="" target="_blank"><button class="main-btns" type="btn">View all <i class="fa-light fa-chevron-right"></i></button></a>
                     </div>
                 </div>
 
             </div>
         </div>    
-        <div class="carousel-navigation">
-            <button id="prevBtn" onclick="prevSlide()">&#10094;</button>
-            <button style="background-color: red;" id="nextBtn" onclick="nextSlide()">&#10095;</button>
-        </div>
+        
     </div>
     <div id="about" class="section-5">
         <div class="about-us">
@@ -282,16 +274,16 @@
         </div>
         <div class="container-highlights">
             <div class="no-vehicles">
-                <div>6000+</div>
-                <div><span>Two wheeler</span></div>
+                <div id="value1" class="value-number">7000+</div>
+                <div class="value-heading"><span>Two wheeler</span></div>
             </div>
             <div class="no-vehicles">
-                <div>6000+</div>
-                <div><span>Giga factory</span></div>
+                <div id="value2" class="value-number">8000+</div>
+                <div class="value-heading"><span>Giga factory</span></div>
             </div>
             <div class="no-vehicles">
-                <div>6000+</div>
-                <div><span>Show rooms</span></div>
+                <div id="value3" class="value-number">6500+</div>
+                <div class="value-heading"><span>Show rooms</span></div>
             </div>
         </div>
     </div>
@@ -464,6 +456,29 @@
             Copyright &#169; 2024 | Varcus
         </div>
     </footer>
+    <script>
+         function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start) + "+";
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+const obj1 = document.getElementById("value1");
+const obj2 = document.getElementById("value2");
+const obj3 = document.getElementById("value3");
+
+animateValue(obj1, 3000, 7000, 5000); // Two wheeler
+animateValue(obj2, 5000, 8000, 5000); // Giga factory
+animateValue(obj3, 4000, 6500, 5000); // Show rooms
+
+    </script>
     <script src="invest.js"></script>
 </body>
 </html>
