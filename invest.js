@@ -158,6 +158,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactSection = document.getElementById("contact-form");
   const getStartedbtn = document.getElementById("get-started-link");
 
+  document.getElementById("how-link").addEventListener("click", function () {
+    document
+      .getElementById("investmentall")
+      .scrollIntoView({ behavior: "smooth" });
+  });
+  document
+    .getElementById("learnmore-link-1")
+    .addEventListener("click", function () {
+      document
+        .getElementById("details-invest")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+
+  document
+    .getElementById("learnmore-link-2")
+    .addEventListener("click", function () {
+      document
+        .getElementById("comparison")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+
+  document
+    .getElementById("learnmore-link-3")
+    .addEventListener("click", function () {
+      document
+        .getElementById("terms-conditions")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+
   getStartedbtn.addEventListener("click", function (event) {
     event.preventDefault();
     investSection.scrollIntoView({ behavior: "smooth" });

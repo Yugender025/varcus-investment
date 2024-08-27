@@ -108,6 +108,12 @@
     --btn-white-space: nowrap;
     --btn-border: none;
 }
+button{
+    cursor: pointer;
+}
+a{
+    cursor: pointer;
+}
 html {
     scroll-behavior: smooth;
 }
@@ -428,6 +434,7 @@ nav {
     flex: 0 0 auto;
     background-color: #f3d50e;
     border-radius: 20px;
+    cursor: pointer;
     }
     .section-2 .get-started {
     position: relative;
@@ -524,6 +531,15 @@ nav {
 }
 .Learn:hover {
     padding-right: 5px;
+}
+
+.investment-details{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 /* General Section Styling */
 .section-4 {
@@ -1261,6 +1277,9 @@ button:hover {
     .team-conatct {
        
        padding: 20px;
+    }
+    .investment-details img{
+        max-width: 300px;
     }
     /* .varcus-products .product{
         background-color: var(--main-color);
