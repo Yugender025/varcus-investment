@@ -1,47 +1,76 @@
 let currentIndex = 0;
-const totalItems = 6;
-let itemsToShow = 3; // Default value for desktop
-let maxIndex = Math.ceil(totalItems / itemsToShow) - 1;
+let itemsToShow = 3; // Default for desktop
+const items = document.querySelectorAll(".varcus-products .product");
+const totalItems = items.length;
+const carouselTrack = document.querySelector(".varcus-products");
+let maxIndex = Math.ceil(totalItems / itemsToShow) * itemsToShow - itemsToShow;
+
+const prevButton = document.getElementById("prevBtn");
+const nextButton = document.getElementById("nextBtn");
 
 function updateItemsToShow() {
   if (window.innerWidth <= 480) {
-    itemsToShow = 1; // Show 1 item at a time on small screens
+    itemsToShow = 1; // For small screens (mobile)
+    return 1;
   } else if (window.innerWidth <= 768) {
-    itemsToShow = 2; // Show 2 items at a time on medium screens
+    itemsToShow = 2; // For medium screens (tablet)
+    return 2;
   } else {
-    itemsToShow = 3; // Show 3 items at a time on larger screens
+    itemsToShow = 3; // For large screens (desktop)
+    return 3;
   }
-  maxIndex = Math.ceil(totalItems / itemsToShow) - 1;
-  updateCarousel(); // Recalculate and update the carousel
+  maxIndex = Math.ceil(totalItems / itemsToShow) * itemsToShow - itemsToShow;
+  updateCarousel();
 }
 
 function updateCarousel() {
   const offset = -currentIndex * (100 / itemsToShow);
-  document.querySelector(
-    ".varcus-products"
-  ).style.transform = `translateX(${offset}%)`;
+  carouselTrack.style.transform = `translateX(${offset}%)`;
+  updateButtons();
 }
 
 function nextSlide() {
   if (currentIndex < maxIndex) {
-    currentIndex++;
+    currentIndex += itemsToShow;
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
     updateCarousel();
   }
 }
 
 function prevSlide() {
   if (currentIndex > 0) {
-    currentIndex--;
+    currentIndex -= itemsToShow;
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
     updateCarousel();
   }
 }
 
-// Attach event listeners
-document.getElementById("nextBtn").addEventListener("click", nextSlide);
-document.getElementById("prevBtn").addEventListener("click", prevSlide);
+function updateButtons() {
+  if (currentIndex === 0) {
+    prevButton.classList.add("hide");
+  } else {
+    prevButton.classList.remove("hide");
+  }
+
+  if (currentIndex >= maxIndex) {
+    nextButton.classList.add("hide");
+  } else {
+    nextButton.classList.remove("hide");
+  }
+}
+
+// Event listeners for the navigation buttons
+prevButton.addEventListener("click", prevSlide);
+nextButton.addEventListener("click", nextSlide);
+
+// Update itemsToShow based on screen size
 window.addEventListener("resize", updateItemsToShow);
 
-// Initial update
+// Initial update to position carousel and set button visibility
 updateItemsToShow();
 
 //form integration

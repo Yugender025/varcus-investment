@@ -525,19 +525,55 @@ nav {
 .Learn:hover {
     padding-right: 5px;
 }
+/* General Section Styling */
 .section-4 {
     margin-left: 60px;
-    margin-right:60px;
+    margin-right: 60px;
     display: grid;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-
+    gap: 1rem;
 }
-.view-more{
+
+.section-heading h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+.view-more {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
     margin-right: 1rem;
+}
+
+.view-more button {
+    display: var(--btn-display);
+    align-items: var(--btn-align-items);
+    justify-content: var(--btn-justify-content);
+    gap: var(--btn-gap);
+    padding: var(--btn-padding);
+    position: var(--btn-position);
+    background-color: var(--btn-background-color);
+    border-radius: 12px;
+    width: var(--btn-width);
+    margin-top: var(--btn-margin-top);
+    font-family: var(--btn-font-family);
+    font-weight: var(--btn-font-weight);
+    color: var(--btn-color);
+    font-size: var(--btn-font-size);
+    letter-spacing: var(--btn-letter-spacing);
+    line-height: var(--btn-line-height);
+    white-space: var(--btn-white-space);
+    border: var(--btn-border);
+    margin-top: 32px;
+    transition: background-color 0.3s ease;
+}
+
+.view-more button:hover {
+    background-color: #ddd;
 }
 
 .carousel-container {
@@ -548,39 +584,88 @@ nav {
 .varcus-products {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    gap: 1rem; /* Reduced gap for better alignment */
+    gap: 1rem; /* Space between products */
 }
 
 .varcus-products .product {
     background-color: var(--main-color);
     border-radius: 12px;
-    flex: 0 0 100%; /* For mobile view */
-    max-width: 100%; /* For mobile view */
+    flex: 0 0 100%; /* 100% width for mobile view */
+    max-width: 100%;
     box-sizing: border-box;
 }
 
-.product .product-img {
+.product-img {
     background-color: #E8E8E8;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     height: 255px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* For larger screens (show 3 products at a time) */
-@media (min-width: 600px) {
-    .varcus-products .product {
-        flex: 0 0 calc((100% / 3) - 1rem);
-        max-width: calc((100% / 3) - 1rem);
-    }
+.product-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
-/* Navigation button styles */
+.product-info {
+    padding: 16px;
+    display: grid;
+    gap: 8px;
+}
+
+.product-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-price {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.product-emi {
+    font-size: 1rem;
+    color: #888;
+}
+
+.product-info .main-btns {
+    display: var(--btn-display);
+    align-items: var(--btn-align-items);
+    justify-content: var(--btn-justify-content);
+    gap: var(--btn-gap);
+    padding: var(--btn-padding);
+    position: var(--btn-position);
+    background-color: var(--btn-background-color);
+    border-radius: var(--btn-border-radius);
+    width: var(--btn-width);
+    margin-top: var(--btn-margin-top);
+    font-family: var(--btn-font-family);
+    font-weight: var(--btn-font-weight);
+    color: var(--btn-color);
+    font-size: var(--btn-font-size);
+    letter-spacing: var(--btn-letter-spacing);
+    line-height: var(--btn-line-height);
+    white-space: var(--btn-white-space);
+    border: var(--btn-border);
+    margin-top: 32px;
+    transition: background-color 0.3s ease;
+}
+
+.product-info .main-btns:hover {
+    background-color: #ddd;
+}
+
+/* Carousel Navigation Buttons */
 .carousel-navigation {
     display: flex;
-    align-items: flex-end;
     justify-content: flex-end;
-    margin-bottom: 10px;
-    gap: 1rem;
+    align-items: center;
+    gap: 2rem;
     margin-right: 1rem;
 }
 
@@ -591,32 +676,29 @@ nav {
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1.5rem;
+    transition: background-color 0.3s ease;
 }
 
 .carousel-navigation button:hover {
     background-color: #444;
 }
 
-.product-info {
-    margin: 16px 0 16.5px 16px;
+/* Responsive Design */
+@media (min-width: 768px) {
+    .varcus-products .product {
+        flex: 0 0 calc((100% / 2) - 1rem);
+        max-width: calc((100% / 2) - 1rem);
+    }
 }
 
-.product-heading {
-    font-size: var(--2xl-font-size);
-    font-weight: var(--2xl-font-weight);
-    line-height: var(--2xl-line-height);
-    letter-spacing: var(--2xl-letter-spacing);
+@media (min-width: 1024px) {
+    .varcus-products .product {
+        flex: 0 0 calc((100% / 3) - 1rem);
+        max-width: calc((100% / 3) - 1rem);
+    }
 }
 
-.product-price {
-    margin-top: 1rem;
-    padding-bottom: 5px;
-    font-size: var(--BASE-font-size);
-}
-
-.product-info .main-btns {
-    margin-top: 16px;
-}
 
 .section-5{
     margin-left: 60px;
