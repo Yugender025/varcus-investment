@@ -646,7 +646,7 @@ nav {
 
 .product-emi {
     font-size: 1rem;
-    color: #888;
+    color: var(--bgcolor-1);
 }
 
 .product-info .main-btns {
@@ -699,13 +699,18 @@ nav {
 .carousel-navigation button:hover {
     background-color: #444;
 }
-
+@media (max-width: 480px) {
+    .certified-company {
+            flex-direction: column;
+    }
+    }
 /* Responsive Design */
 @media (min-width: 768px) {
     .varcus-products .product {
         flex: 0 0 calc((100% / 2) - 1rem);
         max-width: calc((100% / 2) - 1rem);
     }
+  
 }
 
 @media (min-width: 1024px) {
@@ -773,7 +778,12 @@ nav {
       align-items: center; /* Center the content */
       margin: 0 auto; /* Center the container itself */
     }
-    
+    .certified-company{
+        flex-direction: column;
+    }
+    .cerified img{
+        width: 100px;
+    }
     .no-vehicles {
       width: 50vw!important; /* Adjust the width to fit better on mobile screens */
       padding: 10px;
@@ -1035,6 +1045,25 @@ nav {
     .company-list li{
         margin-bottom: 1rem;
     }
+    .list-certificates{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .list-certificates h3{
+        font-size: var(--h3-font-size);
+        font-family: var(--h3-font-family);
+        font-weight: var(--h3-font-weight);
+        line-height: var(--h3-line-height);
+        letter-spacing: var(--h3-letter-spacing);
+    }
+    .certified-company{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-top: 2rem;
+    }
     @media only screen and (max-width: 600px) {
         footer .col-3{
          padding-left:0;
@@ -1049,9 +1078,32 @@ nav {
       .copyright {
             font-size: 11px;
         }
+        .certified-company{
+            flex-direction: column;
+        }
+        .cerified img{
+            width: 100px;
+        }
     }
         
-
+    @media only screen and (min-width: 1024px) {
+        .footer-container {
+            gap: 5rem; /* Adjust the gap between columns for larger screens */
+        }
+        
+        footer h6 {
+            font-size: 22px; /* Increase font size for headings */
+            margin-top: 40px; /* Adjust top margin */
+        }
+    
+        footer .col-3 {
+            padding-left: 20px; /* Add some padding to columns */
+        }
+    
+        .copyright {
+            font-size: 14px; /* Adjust font size for copyright text */
+        }
+    }
 
 
 .form-details {
@@ -1241,6 +1293,12 @@ button:hover {
         font-style: var(--h3-font-style);
         line-height: var(--h3-line-height);
         letter-spacing: var(--h3-letter-spacing);
+    }
+    .certified-company{
+        flex-direction: column;
+    }
+    .cerified img{
+        width: 100px;
     }
     .section-5{
         margin-left: 24px;
