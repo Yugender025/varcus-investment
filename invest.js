@@ -58,7 +58,7 @@ document
 
     let isValid = true;
     const scriptURL =
-      "https://script.google.com/macros/s/AKfycbymoeUDs9KVZAgF5o01ZpnOOTe5ryWT31ezCj-SUBOAKXscHhl3ZGhcO3qiyKCgd7B6/exec";
+      "https://script.google.com/macros/s/AKfycbxP_ztnbnsFaDRUK_matsTjPC5v9Tzz9W0xtb0GjnsjDw9xTS3r_cTZZ-_uSG0NyYrF-A/exec";
     const form = document.forms["google-sheet"];
 
     // Reset previous error states
@@ -127,6 +127,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const contactLink = document.getElementById("contact-link");
   const contactSection = document.getElementById("contact-form");
+  const getStartedbtn = document.getElementById("get-started-link");
+
+  getStartedbtn.addEventListener("click", function (event) {
+    event.preventDefault();
+    investSection.scrollIntoView({ behavior: "smooth" });
+  });
 
   // Add click event listener to the About Us link
   aboutLink.addEventListener("click", function (event) {
